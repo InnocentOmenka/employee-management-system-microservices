@@ -6,7 +6,7 @@ import com.innocodes.auth_service.dto.response.ApiResponse;
 import com.innocodes.auth_service.dto.response.AuthResponse;
 import com.innocodes.auth_service.dto.response.UserResponse;
 import com.innocodes.auth_service.service.AuthService;
-import com.innocodes.auth_service.utils.JwtUtil;
+import com.innocodes.auth_service.security.JwtUtil;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

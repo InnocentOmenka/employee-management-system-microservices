@@ -1,4 +1,4 @@
-package com.innocodes.auth_service.utils;
+package com.innocodes.auth_service.security;
 
 
 import com.innocodes.auth_service.entity.User;

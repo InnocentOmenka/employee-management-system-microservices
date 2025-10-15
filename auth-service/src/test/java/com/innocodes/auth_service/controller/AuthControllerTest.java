@@ -8,7 +8,7 @@ import com.innocodes.auth_service.dto.response.AuthResponse;
 import com.innocodes.auth_service.dto.response.UserResponse;
 import com.innocodes.auth_service.enums.Role;
 import com.innocodes.auth_service.service.AuthService;
-import com.innocodes.auth_service.utils.JwtUtil;
+import com.innocodes.auth_service.security.JwtUtil;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
