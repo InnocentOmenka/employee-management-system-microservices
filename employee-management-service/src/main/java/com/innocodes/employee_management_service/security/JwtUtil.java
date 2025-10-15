@@ -1,4 +1,4 @@
-package com.innocodes.employee_management_service.utils;
+package com.innocodes.employee_management_service.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

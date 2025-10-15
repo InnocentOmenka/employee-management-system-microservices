@@ -1,4 +1,4 @@
-package com.innocodes.employee_management_service.dto;
+package com.innocodes.employee_management_service.dto.response;
 
 
 import com.innocodes.employee_management_service.entity.Department;

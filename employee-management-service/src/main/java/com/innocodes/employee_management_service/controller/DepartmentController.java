@@ -1,10 +1,10 @@
 package com.innocodes.employee_management_service.controller;
 
-import com.innocodes.employee_management_service.dto.ApiResponse;
-import com.innocodes.employee_management_service.dto.DepartmentRequest;
-import com.innocodes.employee_management_service.dto.DepartmentResponse;
+import com.innocodes.employee_management_service.dto.response.ApiResponse;
+import com.innocodes.employee_management_service.dto.request.DepartmentRequest;
+import com.innocodes.employee_management_service.dto.response.DepartmentResponse;
 import com.innocodes.employee_management_service.service.DepartmentService;
-import com.innocodes.employee_management_service.utils.JwtUtil;
+import com.innocodes.employee_management_service.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

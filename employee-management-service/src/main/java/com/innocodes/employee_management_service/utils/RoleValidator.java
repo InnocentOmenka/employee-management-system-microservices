@@ -1,9 +1,7 @@
 package com.innocodes.employee_management_service.utils;
 
-import com.innocodes.employee_management_service.entity.User;
-import com.innocodes.employee_management_service.enums.Role;
 import com.innocodes.employee_management_service.exceptions.CustomException;
-import com.innocodes.employee_management_service.repository.UserRepository;
+import com.innocodes.employee_management_service.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

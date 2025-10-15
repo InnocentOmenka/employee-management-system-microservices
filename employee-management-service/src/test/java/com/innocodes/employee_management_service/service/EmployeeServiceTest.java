@@ -1,8 +1,8 @@
 package com.innocodes.employee_management_service.service;
 
-import com.innocodes.employee_management_service.dto.ApiResponse;
-import com.innocodes.employee_management_service.dto.EmployeeRequest;
-import com.innocodes.employee_management_service.dto.UserResponse;
+import com.innocodes.employee_management_service.dto.response.ApiResponse;
+import com.innocodes.employee_management_service.dto.request.EmployeeRequest;
+import com.innocodes.employee_management_service.dto.response.UserResponse;
 import com.innocodes.employee_management_service.entity.Department;
 import com.innocodes.employee_management_service.entity.User;
 import com.innocodes.employee_management_service.enums.Role;

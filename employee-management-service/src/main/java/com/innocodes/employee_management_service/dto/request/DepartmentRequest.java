@@ -1,4 +1,4 @@
-package com.innocodes.employee_management_service.dto;
+package com.innocodes.employee_management_service.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

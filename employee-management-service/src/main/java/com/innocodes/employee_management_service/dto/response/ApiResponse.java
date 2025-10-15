@@ -1,4 +1,4 @@
-package com.innocodes.employee_management_service.dto;
+package com.innocodes.employee_management_service.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ApiResponse<T> {
-    private String status;   // e.g. "success" or "error"
+    private String status;
     private String message;
     private T data;
 

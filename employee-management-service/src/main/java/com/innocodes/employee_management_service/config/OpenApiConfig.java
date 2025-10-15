@@ -15,7 +15,7 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Employee Management Service API")  // Fix: Not "Authentication service"
+                        .title("Employee Management Service API")
                         .version("1.0.0")
                         .description("Employee and department management with RBAC")
                 )

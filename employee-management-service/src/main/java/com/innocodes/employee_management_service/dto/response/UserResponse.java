@@ -1,4 +1,4 @@
-package com.innocodes.employee_management_service.dto;
+package com.innocodes.employee_management_service.dto.response;
 
 
 import com.innocodes.employee_management_service.enums.Role;
@@ -17,7 +17,6 @@ public class UserResponse {
     private String email;
     private Role role;
     private Long departmentId;
-    private String message;
     private String status;
     private LocalDateTime createdAt;
 }
