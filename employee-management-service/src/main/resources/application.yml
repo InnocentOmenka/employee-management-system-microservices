@@ -1,0 +1,65 @@
+spring:
+  profiles:
+    active: default  # Optional - can be empty file
+#server:
+#  port: 8082
+#
+#spring:
+#  application:
+#    name: employee-management-service
+#  config:
+#    import: optional:configserver
+#  cloud:
+#    config:
+#      enabled: false
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/employee_db
+#    username: postgres
+#    password: passpass
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#  flyway:
+#    enabled: true
+#    locations: classpath:db/migration
+#    baseline-on-migrate: true
+#  web:
+#    cors:
+#      allowed-origins: "*"
+#      allowed-methods: "*"
+#      allowed-headers: "*"
+#      allow-credentials: true
+#  springdoc:
+#    api-docs:
+#      enabled: true
+#      path: /v3/api-docs
+#    swagger-ui:
+#      enabled: true
+#      path: /swagger-ui.html
+#    # ✅ CRITICAL: Force Swagger UI to use gateway URL
+#    servers:
+#      - url: http://localhost:8080/employee
+#        description: Proxied via API Gateway
+#
+#jwt:
+#  secret: "3b8b6f6a2c4a8f0b90e2c7c9f67f8e8a1d1a2b3c4d5e6f708091a1b2c3d4e5f6"
+#  expiration: 86400000
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    prefer-ip-address: true
+#
+#logging:
+#  level:
+#    org.springdoc: DEBUG
+#    org.springframework.security: DEBUG
+#    org.springframework.web: DEBUG

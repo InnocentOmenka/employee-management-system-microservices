@@ -1,0 +1,109 @@
+spring:
+  profiles:
+    active: default
+
+#server:
+#  port: 8080
+#
+#spring:
+#  application:
+#    name: api-gateway
+#  cloud:
+#    gateway:
+#      routes:
+#        # Auth route (for APIs)
+#        - id: auth-service
+#          uri: lb://auth-service
+#          predicates:
+#            - Path=/auth/**
+#          filters:
+#            - StripPrefix=1
+#        # Employee route (for APIs)
+#        - id: employee-service
+#          uri: lb://employee-management-service
+#          predicates:
+#            - Path=/employee/**
+#          filters:
+#            - StripPrefix=1
+#        # Proxy Auth Swagger docs
+#        - id: auth-swagger
+#          uri: lb://auth-service
+#          predicates:
+#            - Path=/auth/v3/api-docs/**
+#          filters:
+#            - RewritePath=/auth/(?<path>.*), /$\{path}
+#            - ModifyResponseBody=com.fasterxml.jackson.databind.JsonNode,com.fasterxml.jackson.databind.JsonNode,com.innocodes.api_gateway.filter.OpenApiServerRewriteTransformer,gatewayUrl=http://localhost:8080/auth
+#        # Proxy Auth Swagger UI
+#        - id: auth-swagger-ui
+#          uri: lb://auth-service
+#          predicates:
+#            - Path=/auth/swagger-ui/**
+#          filters:
+#            - RewritePath=/auth/(?<path>.*), /$\{path}
+#        # Proxy Employee Swagger docs
+#        - id: employee-swagger
+#          uri: lb://employee-management-service
+#          predicates:
+#            - Path=/employee/v3/api-docs/**
+#          filters:
+#            - RewritePath=/employee/(?<path>.*), /$\{path}
+#            - ModifyResponseBody=com.fasterxml.jackson.databind.JsonNode,com.fasterxml.jackson.databind.JsonNode,com.innocodes.api_gateway.filter.OpenApiServerRewriteTransformer,gatewayUrl=http://localhost:8080/employee
+#        # Proxy Employee Swagger UI
+#        - id: employee-swagger-ui
+#          uri: lb://employee-management-service
+#          predicates:
+#            - Path=/employee/swagger-ui/**
+#          filters:
+#            - RewritePath=/employee/(?<path>.*), /$\{path}
+#        # Centralized Swagger UI
+#        - id: gateway-swagger
+#          uri: http://localhost:8080
+#          predicates:
+#            - Path=/swagger-ui/**,/v3/api-docs/**
+#          filters:
+#            - RewritePath=/swagger-ui/(?<path>.*), /swagger-ui/$\{path}
+#            - RewritePath=/v3/api-docs/(?<path>.*), /v3/api-docs/$\{path}
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+#      global-cors:
+#        cors-configurations:
+#          '[/**]':
+#            allowed-origins: "*"
+#            allowed-methods: "*"
+#            allowed-headers: "*"
+#      default-filters:
+#        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    prefer-ip-address: true
+#
+#jwt:
+#  secret: "3b8b6f6a2c4a8f0b90e2c7c9f67f8e8a1d1a2b3c4d5e6f708091a1b2c3d4e5f6"
+#  expiration: 86400000
+#
+#springdoc:
+#  api-docs:
+#    enabled: true
+#    path: /v3/api-docs
+#  swagger-ui:
+#    path: /swagger-ui.html
+#    urls:
+#      - name: Auth Service
+#        url: /auth/v3/api-docs
+#      - name: Employee Management Service
+#        url: /employee/v3/api-docs
+#    use-root-path: true
+#    config-url: /v3/api-docs/swagger-config
+#  packages-to-scan: com.innocodes.api_gateway
+#  paths-to-match: /auth/**, /employee/**
+#
+#logging:
+#  level:
+#    org.springdoc: DEBUG
+#    org.springframework.cloud.gateway: DEBUG

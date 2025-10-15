@@ -1,0 +1,26 @@
+server:
+  port: 0  # random port during tests
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/employee_test_db  # use a test schema or temp DB
+    username: postgres
+    password: passpass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop  # ensures clean DB each test run
+    show-sql: true
+  flyway:
+    enabled: false  # optional: skip migrations for faster tests
+  main:
+    allow-bean-definition-overriding: true
+
+jwt:
+  secret: test-secret
+  expiration: 3600000  # 1 hour
+
+logging:
+  level:
+    org.springframework: WARN
+    com.innocodes: DEBUG
