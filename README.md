@@ -92,21 +92,26 @@ EMPLOYEE: Created by ADMIN, read-only access.
 API Endpoints
 Base URLs
 
-Gateway: http://localhost:8080
-Auth Service: http://localhost:8080/auth/**
-Employee Service: http://localhost:8080/employee/**
+**Gateway: http://localhost:8080**
+**Auth Service: http://localhost:8080/auth/**
+**Employee Service: http://localhost:8080/employee/**
 
 Authentication Service Endpoints
 Login (Public)
 
-POST /auth/api/v1/auth/login
-Request:
+##POST 
+
+/auth/api/v1/auth/login
+
+##Request:
+
 {
 "email": "admin@company.com",
 "password": "Admin@123"
 }
 
-Response:
+##Response:
+
 {
 "status": "success",
 "message": "Login successful",
@@ -120,7 +125,7 @@ Response:
 }
 }
 
-Register (Public)
+##Register (Public)
 
 POST /auth/api/v1/auth/register
 Headers: Content-Type: application/json
