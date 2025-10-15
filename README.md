@@ -61,13 +61,9 @@ Subsequent runs: Seeder skips if admin exists (logs "Admin user already exists")
 
 User Hierarchy:
 
-ADMIN (auto-seeded): Can create MANAGERS and EMPLOYEES
-MANAGER: Created by ADMIN, can manage department employees
-EMPLOYEE: Created by ADMIN/MANAGER, read-only access
-
-1. **Start PostgreSQL** and create database:
-   ```sql
-   CREATE DATABASE employee_db;
+ADMIN (auto-seeded): Can create MANAGERS and EMPLOYEES.
+MANAGER: Created by ADMIN, can manage department employees.
+EMPLOYEE: Created by ADMIN, read-only access.
 
 ## 🚀 How to Run the Project (Local)
 
@@ -162,7 +158,7 @@ Request:
 }
 
 
-Role-Based Access Control (RBAC)
+**Role-Based Access Control (RBAC)**
 
 ADMIN: Full CRUD on employees/departments
 MANAGER: Read employees in their department
@@ -177,3 +173,57 @@ Create Department (ADMIN only)
 Create Manager User (via Auth Service, ADMIN only)
 Assign Manager to Department (ADMIN only)
 Manager Access: Can only view employees in their assigned department
+
+
+#### **Direct Service Swagger UI Access**
+
+### **Individual Service Swagger UIs**
+
+Each microservice exposes its own **Swagger UI** directly on its service port:
+
+- **Auth Service Swagger UI**:  
+  **`http://localhost:8081/swagger-ui/index.html`**  
+  📋 **Endpoints**: Authentication, login, user registration, JWT generation
+
+- **Employee Management Service Swagger UI**:  
+  **`http://localhost:8082/swagger-ui/index.html`**  
+  📋 **Endpoints**: Employee CRUD, department management, manager assignments
+
+### **Access Instructions**
+
+1. **Start all services** following the sequential startup order
+2. **Navigate directly** to each service's Swagger UI:
+   - Auth: `http://localhost:8081/swagger-ui/index.html`
+   - Employee: `http://localhost:8082/swagger-ui/index.html`
+3. **Test endpoints** with proper JWT authorization:
+   - Login via Auth Swagger UI → Copy JWT token
+   - Use token in Employee Swagger UI (Authorize button)
+
+### **Direct Access Benefits**
+- ✅ **Service Isolation**: Test individual services independently
+- ✅ **Debugging**: Identify service-specific issues
+- ✅ **Development**: Direct endpoint testing without gateway
+- ✅ **Configuration Verification**: Check `springdoc` settings per service
+
+### **Note on Direct Access**
+- **CORS**: Services have individual CORS config (`spring.web.cors`)
+- **JWT**: Tokens must be manually copied between services
+- **Routing**: Bypasses API Gateway - use for development/debugging only
+- **Production**: Use API Gateway (`http://localhost:8080`) for unified access
+
+### **Service-Specific Testing Workflow**
+1. **Auth Service** (`8081/swagger-ui`):
+   - Login with `admin@company.com` / `Admin@123`
+   - Create managers/employees
+   - Copy JWT token
+   
+2. **Employee Service** (`8082/swagger-ui`):
+   - Authorize with JWT from Auth Service
+   - Test department creation and manager assignment
+   - Verify RBAC and department scoping
+
+**No aggregated Swagger UI available** - each service maintains its own OpenAPI documentation and Swagger interface.
+
+---
+
+Add this section to your **"API Endpoints"** or **"Testing"** section. This clarifies that there's **no gateway aggregation** and users should access Swagger UI directly on each service port.
