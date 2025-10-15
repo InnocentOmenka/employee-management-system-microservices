@@ -93,10 +93,12 @@ API Endpoints
 Base URLs
 
 **Gateway: http://localhost:8080**
+
 **Auth Service: http://localhost:8080/auth/**
+
 **Employee Service: http://localhost:8080/employee/**
 
-Authentication Service Endpoints
+###**Authentication Service Endpoints**
 Login (Public)
 
 ##POST 
